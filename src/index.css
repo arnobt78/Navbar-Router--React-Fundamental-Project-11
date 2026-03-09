@@ -370,7 +370,7 @@ nav {
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0rem 0rem;
 }
 .page-title {
   margin-bottom: 1rem;
@@ -379,5 +379,5 @@ nav {
 .page-text {
   line-height: 1.6;
   color: var(--grey-600);
-  max-width: 40em;
+  max-width: 60em;
 }
