@@ -1,12 +1,6 @@
-# Navbar Project - React Fundamental Project 11
+# Navbar Header - React, Vite, JavaScript, Custom CSS Fundamental Project 11
 
-<img width="1195" alt="Screenshot" src="https://github.com/user-attachments/assets/28095bdf-6ad6-4cda-a168-1c5faa605474" />
-
----
-
-A hands-on project for learning React fundamentals by building a fully responsive navigation bar. This project demonstrates the use of state, conditional rendering, dynamic styles, array mapping, and integration with libraries like `react-icons`. The goal is to teach new React developers how to structure, style, and manage interactive UI components in a modern React app using Vite.
-
-- **Live-Demo:** [https://navbar-arnob.netlify.app/](https://navbar-arnob.netlify.app/)
+- **Live Demo:** []()
 
 ---
 
@@ -58,6 +52,7 @@ This project is a step-by-step learning tool for React beginners. You will build
 ```
 
 **Key Files:**
+
 - `App.jsx`: Main app component, renders Navbar.
 - `Navbar.jsx`: Core component implementing all Navbar logic.
 - `data.jsx`: Exports arrays for navigation links and social icons.
@@ -99,6 +94,7 @@ npm install
 ```bash
 npm run dev
 ```
+
 Visit [http://localhost:5173](http://localhost:5173) (or as directed in terminal).
 
 ### Building for Production
@@ -133,13 +129,13 @@ Defines the navigation and social links:
 
 ```js
 export const links = [
-  { id: 1, url: '/', text: 'home' },
-  { id: 2, url: '/about', text: 'about' },
+  { id: 1, url: "/", text: "home" },
+  { id: 2, url: "/about", text: "about" },
   // Add more as needed
 ];
 
 export const social = [
-  { id: 1, url: 'https://twitter.com/', icon: <FaTwitter /> },
+  { id: 1, url: "https://twitter.com/", icon: <FaTwitter /> },
   // Add more as needed
 ];
 ```
@@ -168,8 +164,10 @@ const Navbar = () => {
       </div>
       {showLinks && (
         <ul className="links">
-          {links.map(link => (
-            <li key={link.id}><a href={link.url}>{link.text}</a></li>
+          {links.map((link) => (
+            <li key={link.id}>
+              <a href={link.url}>{link.text}</a>
+            </li>
           ))}
         </ul>
       )}
@@ -205,16 +203,24 @@ const Navbar = () => {
           <FaBars />
         </button>
       </div>
-      <div className="links-container" ref={linksContainerRef} style={linkStyles}>
+      <div
+        className="links-container"
+        ref={linksContainerRef}
+        style={linkStyles}
+      >
         <ul className="links" ref={linksRef}>
-          {links.map(link => (
-            <li key={link.id}><a href={link.url}>{link.text}</a></li>
+          {links.map((link) => (
+            <li key={link.id}>
+              <a href={link.url}>{link.text}</a>
+            </li>
           ))}
         </ul>
       </div>
       <ul className="social-icons">
-        {social.map(icon => (
-          <li key={icon.id}><a href={icon.url}>{icon.icon}</a></li>
+        {social.map((icon) => (
+          <li key={icon.id}>
+            <a href={icon.url}>{icon.icon}</a>
+          </li>
         ))}
       </ul>
     </nav>
@@ -251,10 +257,28 @@ nav {
   height: 10rem;
 }
 @media screen and (min-width: 800px) {
-  .nav-toggle { display: none; }
-  .links-container { height: auto !important; }
-  .links { display: flex; gap: 0.5rem; }
-  .social-icons { display: flex; gap: 0.5rem; }
+  .nav-toggle {
+    display: none;
+  }
+  .links-container {
+    height: auto !important;
+  }
+  .links {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .social-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .links {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .social-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
 }
 ```
 
