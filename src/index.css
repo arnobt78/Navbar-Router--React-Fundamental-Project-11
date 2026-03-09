@@ -257,6 +257,7 @@ ul {
 nav {
   background: var(--white);
   box-shadow: var(--shadow-1);
+  min-height: 4.5rem;
 }
 
 .nav-header {
@@ -264,6 +265,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  min-height: 4.5rem;
 }
 .nav-toggle {
   font-size: 1.5rem;
@@ -277,12 +279,17 @@ nav {
   color: var(--primary-700);
   transform: rotate(90deg);
 }
+/* Reserve space for logo to prevent layout shift on load/refresh */
 .logo {
+  width: 196px;
   height: 40px;
+  object-fit: contain;
+  display: block;
 }
 .links a {
   color: var(--grey-700);
   font-size: 1rem;
+  line-height: 1.5;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
   display: block;
@@ -320,6 +327,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    min-height: 4.5rem;
   }
   .links-container {
     height: auto !important;

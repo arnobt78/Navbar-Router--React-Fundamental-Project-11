@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react';
-import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
-import logo from './logo.svg';
+import { useState, useRef } from "react";
+import { FaBars } from "react-icons/fa";
+import { links, social } from "./data";
+import logo from "./logo.svg";
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
@@ -11,27 +11,29 @@ const Navbar = () => {
     setShowLinks(!showLinks);
   };
 
+  // Dynamic height for links container (ref read during render is intentional for this pattern).
   const linkStyles = {
     height: showLinks
-      ? `${linksRef.current.getBoundingClientRect().height}px`
-      : '0px',
+      ? `${linksRef.current.getBoundingClientRect().height}px` // eslint-disable-line react-hooks/refs
+      : "0px",
   };
   return (
     <nav>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <img src={logo} className='logo' alt='logo' />
-          <button className='nav-toggle' onClick={toggleLinks}>
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} className="logo" alt="logo" />
+          <button className="nav-toggle" onClick={toggleLinks}>
             <FaBars />
           </button>
         </div>
 
+        {/* nav links */}
         <div
-          className='links-container'
+          className="links-container"
           ref={linksContainerRef}
           style={linkStyles}
         >
-          <ul className='links' ref={linksRef}>
+          <ul className="links" ref={linksRef}>
             {links.map((link) => {
               const { id, url, text } = link;
               return (
@@ -43,12 +45,14 @@ const Navbar = () => {
           </ul>
         </div>
         {/* social links */}
-        <ul className='social-icons'>
+        <ul className="social-icons">
           {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
             return (
               <li key={id}>
-                <a href={url}>{icon}</a>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {icon}
+                </a>
               </li>
             );
           })}
