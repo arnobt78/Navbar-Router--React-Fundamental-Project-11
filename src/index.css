@@ -374,7 +374,7 @@ nav {
   max-width: 1280px;
   margin: 0 auto;
   padding-inline: 1rem;
-  min-height: calc(100vh - 2.5rem);
+  min-height: calc(100vh - 4.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
